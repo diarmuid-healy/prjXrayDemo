@@ -15,7 +15,9 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Calculator c = new Calculator();
+        double res = c.multNum(5, 2);
+        System.out.println(res);
     }
     
 }
