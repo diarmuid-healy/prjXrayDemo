@@ -1,14 +1,27 @@
-apply plugin: 'java'
-apply plugin: 'jacoco'
-apply plugin: 'application'
+plugins {
+    id 'java'
+}
 
-
-mainClassName = 'prjXrayDemo.Main'
+group 'org.example'
+version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation     'junit:junit:4.13'
+    testCompile 'com.intuit.karate:karate-junit5:1.0.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+sourceSets {
+    test {
+        resources {
+            srcDir file('src/test/java')
+            exclude '**/*.java'
+        }
+    }
 }
